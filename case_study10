@@ -1,0 +1,52 @@
+#Smart Campus Incident
+
+Algorithm:
+
+1. Start.
+2. Store complaint names and severity levels.
+3. Check the severity of each complaint.
+4. Assign a priority based on severity.
+5. Display the complaint and its priority.
+6. Stop.
+
+flowchart:
+
+Start
+   ↓
+Enter maintenance complaints and severity
+   ↓
+Check severity level
+   ↓
+Assign priority
+   ↓
+Display complaint priority
+   ↓
+Stop
+
+
+code:
+
+complaints = ["Water leakage", "Broken chair", "Power failure"]
+severity = [3, 1, 2]
+
+for i in range(len(complaints)):
+    print("\nComplaint:", complaints[i])
+
+    if severity[i] == 3:
+        print("Priority: High")
+    elif severity[i] == 2:
+        print("Priority: Medium")
+    else:
+        print("Priority: Low")
+
+
+output
+
+Complaint: Water leakage
+Priority: High
+
+Complaint: Broken chair
+Priority: Low
+
+Complaint: Power failure
+Priority: Medium

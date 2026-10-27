@@ -1,0 +1,78 @@
+
+#student marks
+
+Algorithm: 
+
+1. Start.
+2. Store the names of three students and their marks in three subjects.
+3. Calculate each student's total and average marks.
+4. Find the student with the highest total marks.
+5. Display each student's marks, total, average, and the topper's name.
+6. Stop.
+
+
+flowchart:
+
+Start
+  ↓
+Enter student names and marks
+  ↓
+Calculate totals and averages
+  ↓
+Find highest total marks
+  ↓
+Display student results and topper
+  ↓
+Stop
+
+
+code:
+
+students = [
+    ["Ravi", 80, 75, 90],
+    ["Priya", 95, 88, 92],
+    ["Kiran", 70, 85, 78]
+]
+
+highest = -1
+topper = ""
+
+print("--- Student Marks Report ---")
+
+for student in students:
+    name = student[0]
+    marks = student[1:]
+    total = sum(marks)
+    average = total / len(marks)
+
+    print("\nName:", name)
+    print("Total:", total)
+    print("Average:", round(average, 2))
+
+    if total > highest:
+        highest = total
+        topper = name
+
+print("\nTop Performer:", topper)
+print("Highest Total:", highest)
+
+
+
+output:
+
+--- Student Marks Report ---
+
+Name: Ravi
+Total: 245
+Average: 81.67
+
+Name: Priya
+Total: 275
+Average: 91.67
+
+Name: Kiran
+Total: 233
+Average: 77.67
+
+Top Performer: Priya
+Highest Total: 275

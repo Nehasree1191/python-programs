@@ -1,0 +1,67 @@
+
+#Progressive electricity billing
+
+Algorithm:
+
+1.Start.
+2.Input the consumer's name and units consumed.
+3.If units are up to 100, charge ₹1.50 per unit.
+4.If units are between 101 and 200, charge ₹1.50 for the first 100 units and ₹2.50 for the remaining units.
+5.If units exceed 200, charge ₹4.00 per unit for units above 200.
+6.Add a fixed charge of ₹50.
+7.Display the total bill.
+8.Stop.
+
+
+
+Flowchart:
+
+Start
+  ↓
+Input name and units
+  ↓
+Calculate bill using slab rates
+  ↓
+Add fixed charge of ₹50
+   ↓
+Display total bill
+   ↓
+Stop
+
+
+
+
+python code:
+
+name = input("Enter consumer name: ")
+units = int(input("Enter units consumed: "))
+
+if units < 0:
+    print("Invalid units consumed.")
+
+else:
+    if units <= 100:
+        bill = units * 1.50
+    elif units <= 200:
+        bill = (100 * 1.50) + ((units - 100) * 2.50)
+    else:
+        bill = (100 * 1.50) + (100 * 2.50) + ((units - 200) * 4.00)
+
+    bill = bill + 50
+
+    print("\n--- Electricity Bill ---")
+    print("Consumer Name:", name)
+    print("Units Consumed:", units)
+    print("Total Bill: Rs.", format(bill, ".2f"))
+
+
+
+output: 
+
+Enter consumer name: Ravi
+Enter units consumed: 250
+
+--- Electricity Bill ---
+Consumer Name: Ravi
+Units Consumed: 250
+Total Bill: Rs. 650.00

@@ -1,0 +1,43 @@
+
+#Water Distribution Fairness Analysis
+
+Algorithm:
+1. Start.
+2. Enter the water demand and water supplied.
+3. Calculate the shortage for each area.
+4. Identify the area with the highest shortage.
+5. Display the results.
+6. Stop.
+
+flowchart:
+
+Start
+Enter demand and supply
+Calculate water shortage
+Find highest shortage
+Display results
+Stop
+
+code:
+
+areas = ["Area A", "Area B", "Area C"]
+demand = [100, 150, 120]
+supply = [80, 100, 110]
+
+shortages = []
+
+for i in range(len(areas)):
+    shortage = demand[i] - supply[i]
+    shortages.append(shortage)
+    print(areas[i], "Shortage:", shortage)
+
+largest = max(shortages)
+index = shortages.index(largest)
+
+print("Most underserved area:", areas[index])
+
+# output
+Area A Shortage: 20
+Area B Shortage: 50
+Area C Shortage: 10
+Most underserved area: Area B

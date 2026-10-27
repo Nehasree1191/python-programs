@@ -1,0 +1,87 @@
+#Railway fare calculator
+
+Algorithm:
+
+1. Start.
+2. Enter passenger name, age, and distance in kilometres.
+3. Calculate fare based on distance:
+   - Up to 100 km: ₹2 per km
+   - 101–300 km: ₹3 per km for distance above 100, plus ₹200
+   - Above 300 km: ₹4 per km for distance above 300, plus ₹800
+4. If the passenger is aged 60 or above, apply a 10% concession.
+5. Add a reservation fee of ₹30.
+6. Display the final fare.
+7. Stop.
+
+
+Flowchart:
+
+Start
+  ↓
+Input name, age and distance
+  ↓
+Calculate fare using distance slabs
+  ↓
+Is age ≥ 60?
+  ↓
+Yes
+  ↓
+Apply 10% concession
+  ↓
+No
+  ↓
+No concession
+  ↓
+Add reservation fee and display fare
+  ↓
+  stop
+
+
+python code:
+
+name = input("Enter passenger name: ")
+age = int(input("Enter passenger age: "))
+distance = float(input("Enter distance in km: "))
+
+if age < 0 or distance <= 0:
+    print("Invalid input")
+else:
+    if distance <= 100:
+        fare = distance * 2
+    elif distance <= 300:
+        fare = 200 + (distance - 100) * 3
+    else:
+        fare = 800 + (distance - 300) * 4
+
+    if age >= 60:
+        concession = fare * 0.10
+    else:
+        concession = 0
+
+    reservation = 30
+    total = fare - concession + reservation
+
+    print("\n--- Railway Ticket ---")
+    print("Passenger Name:", name)
+    print("Age:", age)
+    print("Distance:", distance, "km")
+    print("Basic Fare: Rs.", fare)
+    print("Concession: Rs.", concession)
+    print("Reservation Fee: Rs.", reservation)
+    print("Total Fare: Rs.", total)
+
+
+Output:
+
+Enter passenger name: Ravi
+Enter passenger age: 65
+Enter distance in km: 200
+
+--- Railway Ticket ---
+Passenger Name: Ravi
+Age: 65
+Distance: 200.0 km
+Basic Fare: Rs. 500.0
+Concession: Rs. 50.0
+Reservation Fee: Rs. 30
+Total Fare: Rs. 480.0

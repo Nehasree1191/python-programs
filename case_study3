@@ -1,0 +1,95 @@
+
+#Student performance analysis
+
+
+Algorithm:
+
+1. Start.
+2. Enter the student's name.
+3. Enter marks for three subjects.
+4. Calculate total marks and average.
+5. If any subject mark is below 35, declare the student as Fail.
+6. Otherwise, assign a grade based on the average:
+   - 90 and above: A Grade
+   - 75–89: B Grade
+   - 50–74: C Grade
+   - Below 50: D Grade
+7. Display the total, average, grade, and result.
+8. Stop.
+
+
+Flowchart:
+
+Start
+  ↓
+Enter name and 3 subject marks
+  ↓
+Calculate total and average
+  ↓
+Any subject mark below 35?
+  ↓
+Yes
+  ↓
+Fail
+  ↓
+No
+↓
+Assign grade
+  ↓
+Display result and grade
+  ↓
+Stop
+
+
+
+python code:
+
+name = input("Enter student name: ")
+
+m1 = int(input("Enter subject 1 marks: "))
+m2 = int(input("Enter subject 2 marks: "))
+m3 = int(input("Enter subject 3 marks: "))
+
+if min(m1, m2, m3) < 0 or max(m1, m2, m3) > 100:
+    print("Invalid marks")
+else:
+    total = m1 + m2 + m3
+    average = total / 3
+
+    if m1 < 35 or m2 < 35 or m3 < 35:
+        grade = "F"
+        result = "Fail"
+    else:
+        result = "Pass"
+
+        if average >= 90:
+            grade = "A"
+        elif average >= 75:
+            grade = "B"
+        elif average >= 50:
+            grade = "C"
+        else:
+            grade = "D"
+
+    print("\n--- Student Report ---")
+    print("Name:", name)
+    print("Total Marks:", total)
+    print("Average:", round(average, 2))
+    print("Grade:", grade)
+    print("Result:", result)
+
+
+
+output:
+
+Enter student name: Ravi
+Enter subject 1 marks: 85
+Enter subject 2 marks: 90
+Enter subject 3 marks: 80
+
+--- Student Report ---
+Name: Ravi
+Total Marks: 255
+Average: 85.0
+Grade: B
+Result: Pass

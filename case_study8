@@ -1,0 +1,58 @@
+
+#Manufacturing Quality Control Matrix
+
+Algorithm:
+1. Start.
+2. Enter the total products and defective products.
+3. Calculate the defect percentage.
+4. Compare it with the 5% defect limit.
+5. Display the defect percentage and quality status.
+6. Stop.
+
+
+flowchart:
+
+Start
+  ↓
+Enter total and defective products
+  ↓
+Calculate defect percentage
+  ↓
+Is defect percentage above 5%?
+  ↓
+No
+  ↓
+Good quality
+  ↓
+Yes
+  ↓
+Check batch
+  ↓
+Stop
+
+
+
+code:
+
+total = int(input("Enter total products: "))
+defective = int(input("Enter defective products: "))
+
+if total <= 0 or defective < 0 or defective > total:
+    print("Invalid input")
+else:
+    percentage = (defective / total) * 100
+
+    print("Defect percentage:", round(percentage, 2), "%")
+
+    if percentage > 5:
+        print("Status: Poor quality")
+    else:
+        print("Status: Acceptable quality")
+
+
+output:
+
+Enter total products: 200
+Enter defective products: 16
+Defect percentage: 8.0 %
+Status: Poor quality

@@ -1,0 +1,67 @@
+
+#Fuel comsumption and cost calculator
+
+Algorithm: 
+
+1. Start.
+2. Enter the journey distance in kilometres.
+3. Enter the vehicle mileage in km per litre.
+4. Enter the fuel price per litre.
+5. Validate the input values.
+6. Calculate fuel required using distance divided by mileage.
+7. Calculate total fuel cost.
+8. Display fuel required and total cost.
+9. Stop.
+
+
+Flowchart:
+
+Start
+ ↓
+Enter distance, mileage and fuel price
+  ↓
+Are all values greater than zero?
+  ↓
+Yes
+ ↓
+Calculate fuel and cost
+  ↓
+No
+  ↓
+Display invalid input
+  ↓
+Display fuel required and journey cost
+   ↓
+Stop
+
+
+Python code:
+
+distance = float(input("Enter distance in km: "))
+mileage = float(input("Enter mileage in km/litre: "))
+price = float(input("Enter fuel price per litre: Rs. "))
+
+if distance <= 0 or mileage <= 0 or price <= 0:
+    print("Invalid input")
+else:
+    fuel = distance / mileage
+    cost = fuel * price
+
+    print("\n--- Fuel Cost Report ---")
+    print("Distance:", distance, "km")
+    print("Mileage:", mileage, "km/litre")
+    print("Fuel Required:", round(fuel, 2), "litres")
+    print("Total Fuel Cost: Rs.", round(cost, 2))
+
+
+output:
+
+Enter distance in km: 300
+Enter mileage in km/litre: 15
+Enter fuel price per litre: Rs. 100
+
+--- Fuel Cost Report ---
+Distance: 300.0 km
+Mileage: 15.0 km/litre
+Fuel Required: 20.0 litres
+Total Fuel Cost: Rs. 2000.0

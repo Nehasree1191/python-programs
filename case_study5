@@ -1,0 +1,61 @@
+#student examination eligibility system
+
+Algorithm:
+
+1. Start.
+2. Enter the student's name.
+3. Enter attendance percentage and internal marks.
+4. Enter laboratory completion status and fee payment status.
+5. Check whether attendance is at least 75% and internal marks are at least 20 out of 40.
+6. Check whether the laboratory is completed and fees are paid.
+7. If all conditions are satisfied, display Eligible; otherwise, display Not Eligible.
+8. Stop.
+
+
+Flowchart:
+
+Start
+Input student details
+Check attendance ≥ 75% and internal marks ≥ 20
+Lab completed and fees paid?
+Yes to all
+Eligible
+
+No to any
+Not Eligible
+
+Display examination eligibility
+
+Stop
+
+
+code:
+
+name = input("Enter student name: ")
+attendance = float(input("Enter attendance percentage: "))
+marks = float(input("Enter internal marks out of 40: "))
+lab = input("Lab completed? (yes/no): ").lower()
+fees = input("Fees paid? (yes/no): ").lower()
+
+if not (0 <= attendance <= 100 and 0 <= marks <= 40):
+    print("Invalid input")
+elif (attendance >= 75 and marks >= 20
+      and lab == "yes" and fees == "yes"):
+    print("\nStudent Name:", name)
+    print("Result: Eligible for final examination")
+else:
+    print("\nStudent Name:", name)
+    print("Result: Not eligible for final examination")
+
+
+
+output:
+
+Enter student name: Ravi
+Enter attendance percentage: 85
+Enter internal marks out of 40: 32
+Lab completed? (yes/no): yes
+Fees paid? (yes/no): yes
+
+Student Name: Ravi
+Result: Eligible for final examination

@@ -1,0 +1,73 @@
+#Bus Passenger Occupancy Calculator
+
+Algorithm:
+
+1. Start.
+2. Enter the bus capacity and initial number of passengers.
+3. Enter the number of passengers boarding and alighting.
+4. Calculate the current passengers.
+5. Check whether the passenger count exceeds bus capacity or becomes negative.
+6. Display the remaining passengers and available seats.
+7. Stop.
+
+
+Flowchart:
+
+Start
+  ↓
+Input bus capacity and initial passengers
+  ↓
+Input boarding and alighting passengers
+  ↓
+Calculate current passengers
+  ↓
+Check capacity and passenger count
+  ↓
+Display passengers and vacant seats
+  ↓
+Stop
+
+
+code:
+
+capacity = int(input("Enter bus capacity: "))
+passengers = int(input("Enter initial passengers: "))
+boarding = int(input("Enter passengers boarding: "))
+alighting = int(input("Enter passengers alighting: "))
+
+if capacity <= 0 or passengers < 0 or boarding < 0 or alighting < 0:
+    print("Invalid input")
+elif passengers > capacity:
+    print("Initial passengers exceed capacity")
+elif alighting > passengers:
+    print("Invalid: More passengers cannot alight")
+else:
+    passengers = passengers + boarding - alighting
+
+    if passengers > capacity:
+        print("Bus is overloaded!")
+    else:
+        vacant = capacity - passengers
+
+        print("\n--- Bus Occupancy Report ---")
+        print("Passengers Remaining:", passengers)
+        print("Vacant Seats:", vacant)
+
+        if vacant == 0:
+            print("Status: Bus is full")
+        else:
+            print("Status: Seats are available")
+
+
+
+output:
+
+Enter bus capacity: 50
+Enter initial passengers: 30
+Enter passengers boarding: 15
+Enter passengers alighting: 10
+
+--- Bus Occupancy Report ---
+Passengers Remaining: 35
+Vacant Seats: 15
+Status: Seats are available
