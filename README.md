@@ -1,7 +1,8 @@
 Name: K.Nehasree
-branch: CSD
-section: 2
 
+section: CSD2
+
+TOPICS:
 1. Progressive electricity billing
 2. Railway fare calculator
 3. Student performance analysis
